@@ -36,6 +36,7 @@ Rectangle {
         anchors.rightMargin: 5
         font.pointSize: 10
         onAccepted: doSearch(searchKeyword.text)
+        width: 200
 
         Image {
             anchors.verticalCenter: parent.verticalCenter
