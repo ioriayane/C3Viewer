@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="アイコン.svg"
+   inkscape:export-filename="D:\QtProjects\C3Viewer\resource\アイコン.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="221.28569"
+     inkscape:cy="505.94592"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1309"
+     inkscape:window-height="874"
+     inkscape:window-x="371"
+     inkscape:window-y="162"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3753"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#505050;fill-opacity:0;stroke:none;stroke-width:1.40900004000000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect4009"
+       width="160"
+       height="160"
+       x="110"
+       y="463.07648"
+       ry="0"
+       inkscape:export-filename="D:\QtProjects\C3Viewer\resource\g4011.png"
+       inkscape:export-xdpi="16.875"
+       inkscape:export-ydpi="16.875" />
+    <path
+       style="fill:none;stroke:#505050;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 85,237.36218 70,60 -70,60"
+       id="path3755"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-xdpi="11.927747"
+       inkscape:export-ydpi="11.927747" />
+    <rect
+       style="fill:#0b070b;fill-opacity:0;stroke:none"
+       id="rect3757"
+       width="120"
+       height="150.90863"
+       x="60"
+       y="222.36218"
+       inkscape:export-filename="D:\QtProjects\C3Viewer\resource\path3755.png"
+       inkscape:export-xdpi="11.927747"
+       inkscape:export-ydpi="11.927747" />
+    <g
+       id="g4046"
+       transform="translate(7.6293945e-6,13.571394)"
+       inkscape:export-filename="D:\QtProjects\C3Viewer\resource\g4011.png"
+       inkscape:export-xdpi="16.875"
+       inkscape:export-ydpi="16.875">
+      <rect
+         ry="8.8044605"
+         y="558.20062"
+         x="130.48125"
+         height="17.608921"
+         width="119.03749"
+         id="rect3943-0-7"
+         style="fill:#505050;fill-opacity:1;stroke:#a6a6a7;stroke-width:1.84866798;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <rect
+         ry="8.8044605"
+         y="520.70062"
+         x="130.48125"
+         height="17.608921"
+         width="119.03749"
+         id="rect3943-0-7-7"
+         style="fill:#505050;fill-opacity:1;stroke:#a6a6a7;stroke-width:1.84866798;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <rect
+         ry="8.8044605"
+         y="483.20062"
+         x="130.48125"
+         height="17.608921"
+         width="119.03749"
+         id="rect3943-0-7-8"
+         style="fill:#505050;fill-opacity:1;stroke:#a6a6a7;stroke-width:1.84866798;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </g>
+  </g>
+</svg>
