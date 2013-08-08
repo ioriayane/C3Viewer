@@ -73,7 +73,7 @@ Rectangle {
     ComikeDataModel {
         id: comike
         dbFilePath: catalogPath + "catalog.db"
-        queryDayId: daysList.currentDay
+        queryDayId: ""//daysList.currentDay
         queryBlockId: ""
         queryGenreId: ""
 
@@ -141,8 +141,8 @@ Rectangle {
             anchors.top: parent.top
             anchors.left: parent.left
 //            anchors.bottom: parent.bottom
-            width: 300
-            height: parent.height * 0.5
+            width: 250
+            height: parent.height
             color: "lightgray"
             //メインメニュー
             ListView {
@@ -162,11 +162,11 @@ Rectangle {
                     }
                 }
                 //状態管理用に現在選択中の項目
-                property string currentMenuId: "0"
+                property string currentMenuId: "10"
 
             }
             //日付と場所
-            Row {
+            Item {
                 id: dateAndPalace
                 anchors.left: menu.right
                 anchors.right: parent.right
@@ -175,8 +175,10 @@ Rectangle {
                 //日付一覧
                 MenuListView {
                     id: daysList
-                    width: 100
-                    height: parent.height
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    height: 10//parent.height
                     model: ListModel { id: daysModel }
                     delegate: MenuButton {
                         width: parent.width
@@ -187,6 +189,7 @@ Rectangle {
                             //リストのカーソルを移動する
                             daysList.currentIndex = index
                         }
+                        Component.onCompleted: daysList.height = daysList.count * height
                     }
                     //現在の日付ID
                     property string currentDay: "1"
@@ -194,8 +197,10 @@ Rectangle {
                 //ブロック一覧
                 MenuListView {
                     id: blocksList
-                    width: 100
-                    height: parent.height
+                    anchors.top: daysList.bottom
+                    anchors.bottom: parent.bottom
+                    anchors.left: parent.left
+                    anchors.right: parent.right
                     model: ListModel { id: blocksModel }
                     delegate: MenuButton {
                         width: parent.width
@@ -213,20 +218,23 @@ Rectangle {
             MenuListView {
                 id: genreList
                 anchors.fill: dateAndPalace
-                width: 200
+                width: 150
                 height: parent.height
                 model: ListModel { id: genresModel }
                 delegate: MenuButton {
                     width: parent.width
                     text: model.name
                     onClicked: {
+                        //現在のジャンル
+                        genreList.currentGenre = model.id
                         //リストのカーソルを移動する
                         genreList.currentIndex = index
                         //ジャンルの頭のインデックスを調べるてハイライト移動
-                        list.setCurrentIndex(comike.getGenreStartIndex(model.id))
+//                        list.setCurrentIndex(comike.getGenreStartIndex(model.id))
                     }
                 }
                 visible: false
+                property string currentGenre: "1"
             }
         }
 //        //マップ
@@ -263,7 +271,55 @@ Rectangle {
             model: 0
         }
 
+
+        //サークル情報詳細
+        Rectangle {
+            id: circleDetail
+//            anchors.right: parent.right
+//            anchors.rightMargin: 20
+            width: circleDetailArea.width + 20
+            height: circleDetailArea.height + 20
+            x: (list.circleDetail.x + width > root.width) ? (root.width - width - 10) : list.circleDetail.x
+            y: list.circleDetail.y
+            radius: 10
+            border.color: "gray"
+            border.width: 2
+
+            visible: list.circleDetail.date.length > 0
+
+            Column {
+                id: circleDetailArea
+                anchors.top: parent.top
+                anchors.left: parent.left
+                anchors.margins: 10
+                spacing: 2
+                Text {  text: list.circleDetail.date    }
+                Text {  text: list.circleDetail.block + " " + list.circleDetail.space    }
+                Text {  text: "circle : " + list.circleDetail.circleName; font.pointSize: 14    }
+                Text {  text: "author : " + list.circleDetail.penName    }
+                Text {  text: "book : " + list.circleDetail.bookName    }
+                Text {  text: "genre : " + list.circleDetail.genre    }
+                Text {  text: "url : " + list.circleDetail.url    }
+                Text {  text: list.circleDetail.description    }
+            }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: list.circleDetail.date = ""
+            }
+
+//            states: [
+//                State {
+//                    when: !list.circleDetail.up
+//                    PropertyChanges {
+//                        target: circleDetail
+//                        y: parent.height - height - 10
+//                    }
+//                }
+//            ]
+        }
+
     }
+
 
     //モデルとリストとの結びつけ管理
     StateGroup {
@@ -274,6 +330,7 @@ Rectangle {
                 PropertyChanges { target: actionBar; text: qsTr("Date&Place") }
                 PropertyChanges { target: dateAndPalace; visible: true }
                 PropertyChanges { target: genreList; visible: false }
+                PropertyChanges { target: comike; queryDayId: daysList.currentDay }
             }
             //ジャンル
             , State {
@@ -281,6 +338,7 @@ Rectangle {
                 PropertyChanges { target: actionBar; text: qsTr("Ganre") }
                 PropertyChanges { target: dateAndPalace; visible: false }
                 PropertyChanges { target: genreList; visible: true }
+                PropertyChanges { target: comike; queryGenreId: genreList.currentGenre }
             }
             //マップ
             , State {

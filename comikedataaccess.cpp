@@ -48,6 +48,7 @@ QString ComikeDataAccess::makeCircleQuery(const QString &query_dayid, const QStr
                       " inner join ComiketArea on ComiketBlock.areaId = ComiketArea.id");
     if((query_dayid.length() > 0)
             || (query_blockid.length() > 0)
+            || (query_genreid.length() > 0)
             || (query_keyword.length() > 0))
         query_str.append(" where");
     if(query_dayid.length() > 0){
@@ -55,14 +56,23 @@ QString ComikeDataAccess::makeCircleQuery(const QString &query_dayid, const QStr
         if(query_blockid.length() > 0){
             query_str.append(" and ComiketCircle.blockId=" + query_blockid);
         }
-        if(query_genreid.length() > 0){
-            query_str.append(" and ComiketCircle.genreId=" + query_genreid);
-        }
+        condition = true;
+    }
+    if(query_genreid.length() > 0){
+        if(condition)   query_str.append(" and ");
+        query_str.append(" ComiketCircle.genreId=" + query_genreid);
         condition = true;
     }
     if(query_keyword.length() > 0){
-        if(condition)   query_str.append(" and");
-        query_str.append(" ComiketCircle.description like '%" + query_keyword + "%'");
+        if(condition)   query_str.append(" and ");
+        QString t = query_keyword;
+        QStringList words = (t.replace(QString("　"), QString(" "))).split(" ");
+        for(int i=0; i<words.length(); i++){
+            if(i > 0)   query_str.append(" and ");
+            query_str.append(" (");
+            query_str.append(" (ComiketCircle.description || ComiketCircle.circleName || ComiketCircle.penName || ComiketCircle.circleKana) like '%" + words[i] + "%'");
+            query_str.append(" )");
+        }
     }
 
     return query_str;

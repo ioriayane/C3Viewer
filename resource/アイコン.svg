@@ -28,10 +28,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="221.28569"
-     inkscape:cy="505.94592"
+     inkscape:cx="400.12581"
+     inkscape:cy="563.08878"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="true"
      inkscape:window-width="1309"
      inkscape:window-height="874"
@@ -61,9 +61,11 @@
   <g
      inkscape:label="レイヤー 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     style="display:inline"
+     sodipodi:insensitive="true">
     <rect
-       style="fill:#505050;fill-opacity:0;stroke:none;stroke-width:1.40900004000000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:#505050;fill-opacity:0;stroke:none"
        id="rect4009"
        width="160"
        height="160"
@@ -122,5 +124,45 @@
          id="rect3943-0-7-8"
          style="fill:#505050;fill-opacity:1;stroke:#a6a6a7;stroke-width:1.84866798;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
     </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="レイヤー">
+    <path
+       sodipodi:type="arc"
+       style="fill:#dcdcdc;fill-opacity:1;stroke:none"
+       id="path3779"
+       sodipodi:cx="525"
+       sodipodi:cy="387.36218"
+       sodipodi:rx="95"
+       sodipodi:ry="95"
+       d="m 620,387.36218 a 95,95 0 1 1 -190,0 95,95 0 1 1 190,0 z"
+       transform="matrix(1.2857143,0,0,1.2857143,-137.85714,-100.67491)"
+       inkscape:export-filename="D:\QtProjects\C3Viewer\resource\rect2991-1.png"
+       inkscape:export-xdpi="8.8400002"
+       inkscape:export-ydpi="8.8400002" />
+    <rect
+       style="fill:#505050;fill-opacity:1;stroke:none"
+       id="rect2991"
+       width="170.71428"
+       height="20"
+       x="13.482738"
+       y="650.79486"
+       ry="10"
+       transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+       inkscape:export-xdpi="8.8400002"
+       inkscape:export-ydpi="8.8400002" />
+    <rect
+       style="fill:#505050;fill-opacity:1;stroke:none"
+       id="rect2991-1"
+       width="170.71428"
+       height="20"
+       x="575.43774"
+       y="-108.83987"
+       ry="10"
+       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       inkscape:export-xdpi="8.8400002"
+       inkscape:export-ydpi="8.8400002" />
   </g>
 </svg>

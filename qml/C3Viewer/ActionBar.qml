@@ -35,9 +35,12 @@ Rectangle {
         anchors.right: parent.right
         anchors.rightMargin: 5
         font.pointSize: 10
-        onAccepted: doSearch(searchKeyword.text)
         width: 200
-
+        //Enterで検索
+        onAccepted: doSearch(searchKeyword.text)
+        //ESCで検索クリア
+        Keys.onEscapePressed: searchKeyword.clearSearch()
+        //取り消しボタン
         Image {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
@@ -48,11 +51,13 @@ Rectangle {
             source: "images/clear_mark.png"
             MouseArea {
                 anchors.fill: parent
-                onClicked: {
-                    searchKeyword.text = ""
-                    root.doSearch("")
-                }
+                onClicked: searchKeyword.clearSearch()
             }
+        }
+        //検索クリア
+        function clearSearch(){
+            searchKeyword.text = ""
+            root.doSearch("")
         }
     }
 }

@@ -14,6 +14,24 @@ GridView {
     cellWidth: 105 + 4
     cellHeight: 150 + 4
 
+    property alias circleDetail: detail
+
+    QtObject {
+        id: detail
+        property bool up: true
+        property real x: 0
+        property real y: 0
+        property string date: ""
+        property string block: ""
+        property string space: ""
+        property string genre: ""
+        property string circleName: ""
+        property string penName: ""
+        property string bookName: ""
+        property string url: ""
+        property string description: ""
+    }
+
     //カーソルを設定する
     function setCurrentIndex(pos){
         if(pos > -1)
@@ -39,6 +57,26 @@ GridView {
         height: image.height + 4
         onClicked: {
             root.currentIndex = index
+
+            detail.date = model.dayFull
+            detail.block = model.blockName
+            detail.space = model.spaceNo + model.spaceNoSub
+            detail.genre = model.genreName
+            detail.circleName = model.circleName
+            detail.penName = model.penName
+            detail.bookName = model.bookName
+            detail.url = model.url
+            detail.description = model.description
+
+            detail.x = root.x + x + 5
+            detail.y = y + height + 5
+            if(y < root.height / 2){
+                detail.up = false
+
+            }else{
+                detail.up = true
+            }
+            console.debug("y=" + root.y + "," + y)
         }
         Component.onCompleted: {
 //            root.currentDateId = model.day - 1
